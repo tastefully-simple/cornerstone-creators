@@ -61,3 +61,7 @@ vendor/bundle
 *.js.map
 *.zip
 .idea/
+
+# vim swap files
+*.swo
+*.swp
