@@ -48,3 +48,16 @@ Thumbs.db
 *.mov
 *.wmv
 
+node_modules/
+.stencil
+config.stencil.json
+secrets.stencil.json
+.DS_Store
+assets/css-artifacts
+assets/js/bundle.js
+assets/dist
+vendor/bundle
+.bundle
+*.js.map
+*.zip
+.idea/
