@@ -1,0 +1,50 @@
+name: Publish My BitesBox Tech Sandbox BigCommerce
+# This workflow is triggered on pushes to the dev branch only.
+on:
+  pull_request:
+   types: [closed]
+   branches:
+      dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [12.x]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: npm cache
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Install Stencil CLI Dependency
+      run: npm install -g @bigcommerce/stencil-cli@3.10.1
+    # must remove the 3.10.1 specific version at some point (added 3-17-2022)
+    
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Connect to store
+      env:
+        URL: ${{ secrets.STENCIL_STORE_URL_TECH_SANDBOX }}
+        TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_TECH_SANDBOX }}
+     # run: stencil init -u $URL -t $TOKEN -p 3000 -h https://api.bigcommerce.com
+      
+    - name: Log stencil config
+      run: cat config.stencil.json
+
+    - name: Publishing theme to Tech-Sandbox, automatically deleting oldest theme if necessary
+     # run: stencil push -a Tech-Sandbox -c TS.com - Technology Sandbox -d
