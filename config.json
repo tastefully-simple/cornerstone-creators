@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone",
+  "name": "Bitesbox Cornerstone",
   "version": "6.4.0-rc.1",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -372,8 +372,8 @@
   },
   "variations": [
     {
-      "name": "Light",
-      "id": "light",
+      "name": "Tech",
+      "id": "tech",
       "meta": {
         "desktop_screenshot": "desktop_light.png",
         "mobile_screenshot": "mobile_light.png",
