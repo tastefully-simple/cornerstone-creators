@@ -52,4 +52,4 @@ jobs:
         run: stencil init -u $URL -t $TOKEN -p 3000 -h https://api.bigcommerce.com
 
       - name: Publishing theme to Business-Sandbox Bites Box Store, automatically deleting oldest theme if necessary
-        run: stencil push -a Light -d
+        run: stencil push -a Tech -d
