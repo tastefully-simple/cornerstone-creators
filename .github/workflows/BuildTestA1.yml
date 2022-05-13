@@ -53,6 +53,6 @@ jobs:
       - name: Step 1 - Echo out a GitHub Actions Secret to the logs
         run: |
           echo "The GitHub Action Secret will be masked:  "
-          echo ${{ secrets.STENCIL_STORE_URL_PRODUCTION }}
+          echo ${{ secrets.STENCIL_STORE_URL_TECH_SANDBOX }}
           echo "Trick to echo GitHub Actions Secret:  "
-          echo ${{secrets.STENCIL_STORE_URL_PRODUCTION}} | sed 's/./& /g' 
+          echo ${{secrets.STENCIL_STORE_URL_TECH_SANDBOX}} | sed 's/./& /g' 
