@@ -1,4 +1,4 @@
-name: Publish Tech Sandbox BitesBox
+name: Publish Business Sandbox BitesBox
 
 # Controls when the workflow will run
 # This workflow is triggered on pushes to the dev branch only.
@@ -6,7 +6,7 @@ on:
   pull_request:
    types: [closed]
    branches:
-      dev
+      Mock
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -47,9 +47,9 @@ jobs:
       
       - name: Connect to store
         env:
-          URL: ${{ secrets.STENCIL_STORE_URL_BITES_BOX_TECH_SANDBOX }}
-          TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_BITES_BOX_TECH_SANDBOX }}
+          URL: ${{ secrets.STENCIL_STORE_URL_BITES_BOX_BUSINESS_SANDBOX }}
+          TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_BITES_BOX_BUSINESS_SANDBOX }}
         run: stencil init -u $URL -t $TOKEN -p 3000 -h https://api.bigcommerce.com
 
-      - name: Publishing theme to Tech-Sandbox Bites Box Store, automatically deleting oldest theme if necessary
+      - name: Publishing theme to Business-Sandbox Bites Box Store, automatically deleting oldest theme if necessary
         run: stencil push -a Light -d
