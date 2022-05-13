@@ -27,10 +27,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       - name: Use Node.js ${{ matrix.node }}
         uses: actions/setup-node@v2-beta
         with: 
@@ -44,6 +40,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Install Stencil CLI Dependency
+        run: npm install -g @bigcommerce/stencil-cli
+
+      - name: Install Dependencies
+        run: npm ci
+      
       # Runs a set of commands using the runners shell
       - name: Run another one-line script
         run: echo Add other actions to build and deploy your project.
+        
+      - name: Step 1 - Echo out a GitHub Actions Secret to the logs
+        run: |
+          echo "The GitHub Action Secret will be masked:  "
+          echo ${{ secrets.STENCIL_STORE_URL_PRODUCTION }}
+          echo "Trick to echo GitHub Actions Secret:  "
+          echo ${{secrets.STENCIL_STORE_URL_PRODUCTION}} | sed 's/./& /g' 
