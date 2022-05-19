@@ -68,7 +68,6 @@
 .navPages {
     background-color: $color-textHeader;
     overflow-y: auto;
-    padding: spacing("single") * 3;
     z-index: 100;
 
     @include breakpoint("medium") {
@@ -208,9 +207,6 @@
     text-decoration: none;
     text-transform: uppercase;
     border-right: 1px solid $color-textDark;
-    &.activePage {
-        color: $color-white !important;
-    }
 
     @media (max-width: 800px) {
         color: $color-white;
@@ -243,8 +239,6 @@
 
     &:hover,
     &.activePage {
-        color: $navPage-subMenu-item--is-highlighted-color;
-
         svg {
             fill: $navPage-subMenu-item--is-highlighted-color;
             stroke: $navPage-subMenu-item--is-highlighted-color;
