@@ -3,9 +3,13 @@
 // =============================================================================
 
 $header-bg:                                 stencilColor("header-backgroundColor");
-$header-height:                             55px;
+$header-height:                             170px;
 $header-toggle-width:                       $header-height;
 $header-logo-marginVertical:                spacing("half");
 $header-logo-paddingVertical:               $header-logo-marginVertical;
 
 $storeName-color:                           stencilColor("storeName-color");
+
+$mobile-menu-height:                        55px;
+
+$footer-height:                             $header-height;
