@@ -247,7 +247,7 @@ footer{
 
 // Inputs
 // -----------------------------------------------------------------------------
-input,
+input:not(.button),
 textarea,
 select{
     border:1px solid #d3d3d3;
