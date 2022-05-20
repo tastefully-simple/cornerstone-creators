@@ -45,21 +45,16 @@
                     <li>
                         <a href="/contact-us/">Contact Us</a>
                     </li>
+                    <li class="last">
+                        <img src="{{cdn 'assets/img/tstlogo.png'}}" />
+                    </li>
                 </ul>
             </article>
             <article class="footer-info-col footer-info-col--right-medium footer-social-block" data-section-type="footer-socialLogos">
                 <ul class="list-social-logos">
-                    <li>
-                        <img src="{{cdn 'assets/img/fbfooter.png'}}" />
-                    </li>
-                    <li>
-                        <img src="{{cdn 'assets/img/instafooter.png'}}" />
-                    </li>
-                    <li>
-                        <img src="{{cdn 'assets/img/tslogofooter.png'}}" />
-                    </li>
+                    {{> components/common/social-links}}
                     <li class="last">
-                        <img style="float: right" src="{{cdn 'assets/img/footerlogo.png'}}" /><span>&copy; {{moment format="YYYY"}} </span>
+                        <img src="{{cdn 'assets/img/footerlogo-white.png'}}" /><span>&copy; {{moment format="YYYY"}} </span>
                     </li>
                 </ul>
                 <span class="footer-mobile-copyright"><p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p></span>

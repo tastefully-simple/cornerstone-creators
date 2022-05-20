@@ -17,13 +17,12 @@
     //background-color: $footer-background;
     background-image:url('../img/footerbgtile.png');
     background-repeat: repeat-x;
-    border-top: container("border");
     padding: spacing("third") 0;
     position: relative;
     transform: translateZ(0); // 3
     height: $footer-height;
     @media (max-width: 800px) {
-        height: $footer-height * 2;
+        height: ($footer-height * 2) + $footer-logo-height;
         background-position-y: bottom;
     }
 }
@@ -95,12 +94,21 @@
     }
     .last {
         width: 100%;
-        padding-top:10px;
         float:right;
         font-weight: bold;
         color: $color-white;
         padding-top: 10px;
-        padding-right: 10px
+        padding-right: 0;
+
+        img {
+            float: right;
+        }
+        span {
+            display: inline-block;
+            float: right;
+            padding-top: 11px;
+            font-weight: bold;
+        }
     }
     .footer-mobile-copyright {
         display: none;
@@ -178,6 +186,28 @@
 
         &:hover {
             color: stencilColor("color-bbgray");
+        }
+    }
+
+    .last {
+        display: none;
+    }
+
+    @media (max-width: 800px) {
+        li {
+            border-top: 1px solid #e5e5e5;
+        }
+        a, a:hover, a:visited, a:active {
+            color: $color-bbteal;
+            text-align: left;
+            padding-left: 10%;
+            font-weight: bold;
+            font-size: $fontSize-smaller;
+            padding-top: 7px;
+        }
+        .last {
+            display: block !important;
+            padding-top: $footer-logo-height / 4;
         }
     }
 }
@@ -259,6 +289,7 @@
     @media (max-width: 800px) {
         .container {
             height: 100%;
+            padding: 0 !important;
         }
     }
 }
