@@ -1,0 +1,23 @@
+<script type="text/javascript">
+    (function(w) {
+        let cookieDomain = window.location.hostname;
+        if (cookieDomain == 'www.bitesbox.com') cookieDomain = 'bitesbox.com';
+
+        w.BBCookie = {
+            /**
+             *
+             * @param string cid
+             */
+            setConsultantId: function(cid) {
+                // Remove trailing spaces
+                const newCid = cid ? cid.trim() : cid;
+
+                Cookies.set('cid', newCid, { domain: cookieDomain });
+            },
+
+            getConsultantId: function() {
+                return Cookies.get('cid');
+            }
+        };
+    })(window);
+</script>

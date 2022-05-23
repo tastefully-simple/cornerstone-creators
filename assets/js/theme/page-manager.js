@@ -1,6 +1,9 @@
+import BBRouter from './global/bb-router';
+
 export default class PageManager {
     constructor(context) {
         this.context = context;
+        this.router = new BBRouter(context.themeSettings);
     }
 
     type() {
