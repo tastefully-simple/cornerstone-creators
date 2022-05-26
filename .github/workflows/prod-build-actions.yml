@@ -50,3 +50,4 @@ jobs:
     - name: Publishing theme to Production, automatically deleting oldest theme if necessary
       run: stencil push -a -d
       # removed the sub-theme value -a from prod since that should change at some point so we'll just accept the default for now
+
