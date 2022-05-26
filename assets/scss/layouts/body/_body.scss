@@ -10,8 +10,7 @@
 
 .body {
     margin-bottom: spacing("double") * 2;
-    margin-top: spacing("single"); // 1
-
+    margin-top: $mobile-menu-height;
     @include breakpoint("medium") {
         margin-top: spacing("single") + spacing("base"); // 1
     }

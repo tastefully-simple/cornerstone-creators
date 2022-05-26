@@ -44,6 +44,7 @@
     position: absolute;
     right: 0;
     z-index: zIndex("lower");
+    border-bottom: 30px solid $color-textHeader;
 
     @include breakpoint("medium") {
         background: transparent;
@@ -56,7 +57,7 @@
     &.is-open {
         display: block;
         padding-top: $header-height;
-        z-index: 0;
+        position: absolute;
     }
 }
 
@@ -65,10 +66,9 @@
 // -----------------------------------------------------------------------------
 
 .navPages {
-    background-color: $navPages-backgroundColor;
-    height: 100%;
+    background-color: $color-textHeader;
     overflow-y: auto;
-    padding: spacing("single");
+    z-index: 100;
 
     @include breakpoint("medium") {
         @include grid-row(); // 1
@@ -76,7 +76,8 @@
         background: none;
         font-size: 0; // 1
         overflow-y: visible;
-        padding: 0;
+        padding-top: spacing("half");
+        padding-bottom: (spacing("half") + spacing("quarter"));
         text-align: center;
     }
 
@@ -99,6 +100,21 @@
             padding-left: 0;
         }
     }
+    @media (max-width: 800px) {
+        padding: 0;
+        width: 70%;
+        position: absolute;
+        .navPages-action {
+            padding: 1em 0 1em 2.5em;
+            border-right: none;
+            font-size: $fontSize-smaller;
+            border-bottom: 0.010em solid $color-bbgray;
+        }
+        .navPages-list {
+            border-top: 1px solid $color-bbgray;
+            margin-top: $header-height / 7;
+        }
+    }
 }
 
 .navPages-list {
@@ -110,7 +126,6 @@
     }
 
     + .navPages-list {
-        border-top: 1px solid $navPages-list--user-borderColor;
         margin-top: spacing("half");
         padding-top: spacing("half");
     }
@@ -184,17 +199,22 @@
 }
 
 .navPages-action {
-    color: stencilColor("navPages-color");
+    color: $color-textDark;
     display: block;
     font-size: fontSize("smaller");
     font-weight: fontWeight("bold");
     padding: spacing("half") 0;
     text-decoration: none;
     text-transform: uppercase;
+    border-right: 1px solid $color-textDark;
+
+    @media (max-width: 800px) {
+        color: $color-white;
+    }
 
     @include breakpoint("medium") {
         display: inline-block;
-        padding: spacing("half") (spacing("half") + spacing("quarter")) (spacing("half") + spacing("quarter"));
+        padding: 0 (spacing("half") + spacing("quarter")) 0;
 
         &.is-open {
             background-color: $navPage-subMenu-item--is-highlighted-background;
@@ -219,8 +239,6 @@
 
     &:hover,
     &.activePage {
-        color: $navPage-subMenu-item--is-highlighted-color;
-
         svg {
             fill: $navPage-subMenu-item--is-highlighted-color;
             stroke: $navPage-subMenu-item--is-highlighted-color;
@@ -231,6 +249,14 @@
         fill: stencilColor("navPages-color");
         stroke: stencilColor("navPages-color");
         transition: all 0.15s ease;
+    }
+}
+
+.navPages-item {
+    &:last-child {
+        .navPages-action {
+            border: none;
+        }
     }
 }
 

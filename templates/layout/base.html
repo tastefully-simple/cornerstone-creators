@@ -25,9 +25,9 @@
             window.lazySizesConfig.loadMode = 1;
         </script>
         <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js'}}"></script>
-        
+
         {{getFontsCollection font-display='block'}}
-        
+
         <link rel="preload" href="{{cdn 'assets/dist/theme-bundle.font.js'}}" as="script">
         <script async src="{{cdn 'assets/dist/theme-bundle.font.js'}}"></script>
 
@@ -51,6 +51,10 @@
 
         {{!-- Get this loading ASAP --}}
         <link rel="preload" href="{{cdn 'assets/dist/theme-bundle.main.js'}}" as="script">
+
+        {{!-- global libraries --}}
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+        {{> components/common/bb-cookie }}
     </head>
     <body>
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
