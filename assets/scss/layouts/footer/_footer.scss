@@ -14,11 +14,17 @@
 // -----------------------------------------------------------------------------
 
 .footer {
-    background-color: $footer-background;
-    border-top: container("border");
-    padding: spacing("double") 0;
+    //background-color: $footer-background;
+    background-image:url('../img/footerbgtile.png');
+    background-repeat: repeat-x;
+    padding: spacing("third") 0;
     position: relative;
     transform: translateZ(0); // 3
+    height: $footer-height;
+    @media (max-width: 800px) {
+        height: ($footer-height * 2) + $footer-logo-height;
+        background-position-y: bottom;
+    }
 }
 
 .footer-title-sr-only {
@@ -33,6 +39,9 @@
 .footer-info {
     @include grid-row($behavior: nest);
     font-size: 0; // 1
+    @media (max-width: 800px) {
+        height: 100%;
+    }
 }
 
 .footer-info-col {
@@ -41,7 +50,6 @@
     display: inline-block;
     float: none;
     font-size: fontSize("base"); // 2
-    margin-bottom: spacing("double");
     overflow-wrap: break-word;
     text-align: center;
     vertical-align: top;
@@ -68,6 +76,64 @@
 .footer-info-col--small {
     @include breakpoint("medium") {
         width: width("2/12");
+    }
+}
+
+.footer-info-col--right-medium {
+    width: width("4/12");
+    padding-top: (spacing("base"));
+    float: right;
+    .list-social-logos li {
+        float: right;
+        position: relative;
+        display: block;
+        padding-left: 10px;
+        img {
+
+        }
+    }
+    .last {
+        width: 100%;
+        float:right;
+        font-weight: bold;
+        color: $color-white;
+        padding-top: 10px;
+        padding-right: 0;
+
+        img {
+            float: right;
+        }
+        span {
+            display: inline-block;
+            float: right;
+            padding-top: 11px;
+            font-weight: bold;
+        }
+    }
+    .footer-mobile-copyright {
+        display: none;
+    }
+    @media (max-width: 800px) {
+        width: 100% !important;
+        .last {
+            display: none !important;
+        }
+        .footer-mobile-copyright {
+            display: block !important;
+            text-align: center;
+            width: 100%;
+            color: $color-white;
+        }
+        .list-social-logos {
+            text-align: center;
+            width: 50%;
+            display: inline-block;
+            margin-left: 0 !important;
+            margin-bottom: 15px;
+            li {
+                width: 33%;
+            }
+        }
     }
 }
 
@@ -109,13 +175,39 @@
 .footer-info-list {
     list-style: none;
     margin-left: 0;
+    padding-top: (spacing("base"));
 
     a {
-        color: stencilColor("color-textSecondary");
+        color: $color-white;
         text-decoration: none;
+        font-size: 13px;
+        margin-bottom: 8px;
+        display: block;
 
         &:hover {
-            color: stencilColor("color-textSecondary--hover");
+            color: stencilColor("color-bbgray");
+        }
+    }
+
+    .last {
+        display: none;
+    }
+
+    @media (max-width: 800px) {
+        li {
+            border-top: 1px solid #e5e5e5;
+        }
+        a, a:hover, a:visited, a:active {
+            color: $color-bbteal;
+            text-align: left;
+            padding-left: 10%;
+            font-weight: bold;
+            font-size: $fontSize-smaller;
+            padding-top: 7px;
+        }
+        .last {
+            display: block !important;
+            padding-top: $footer-logo-height / 4;
         }
     }
 }
@@ -171,4 +263,33 @@
 
 .footer-newsletter-summary {
     text-align: left;
+}
+
+.footer-social-block {
+    float: right;
+    .list-logos {
+        li {
+            display: block;
+            float: left;
+            position: relative;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    @media (max-width: 800px) {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+    }
+}
+
+.footer {
+    @media (max-width: 800px) {
+        .container {
+            height: 100%;
+            padding: 0 !important;
+        }
+    }
 }
