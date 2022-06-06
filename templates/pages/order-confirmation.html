@@ -8,6 +8,13 @@
 </script>
 
 {{{head.scripts}}}
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+{{> components/common/bb-cookie }}
+
+<script>
+    BBCookie.deleteConsultantCookie();
+    console.log('delete consultant cookie');
+</script>
 
 {{/partial}}
 
