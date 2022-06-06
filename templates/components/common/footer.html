@@ -53,11 +53,13 @@
             <article class="footer-info-col footer-info-col--right-medium footer-social-block" data-section-type="footer-socialLogos">
                 <ul class="list-social-logos">
                     {{> components/common/social-links}}
+                </ul>
+                <ul class="list-social-logos">
                     <li class="last">
-                        <img src="{{cdn 'assets/img/footerlogo-white.png'}}" /><span>&copy; {{moment format="YYYY"}} </span>
+                        <img src="{{cdn 'assets/img/footerlogo-white.png'}}" /><span class="footer-copyright-date">&copy; {{moment format="YYYY"}} </span>
                     </li>
                 </ul>
-                <span class="footer-mobile-copyright"><p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p></span>
+                <span class="footer-mobile-copyright"><p class="powered-by">&copy; {{moment format="YYYY"}} Tastefully Simple </p></span>
             </article>
         </section>
         {{#if theme_settings.show_powered_by}}

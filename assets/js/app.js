@@ -52,7 +52,9 @@ const pageClasses = {
     wishlists: () => import('./theme/wishlist'),
 };
 
-const customClasses = {};
+const customClasses = {
+    'pages/checkout': () => import('./theme/common/bb-checkout.js'),
+};
 
 /**
  * This function gets added to the global window and then called
