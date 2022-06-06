@@ -400,8 +400,8 @@
       }
     },
     {
-      "name": "Tech-Sandbox",
-      "id": "light1",
+      "name": "Tech",
+      "id": "tech",
       "meta": {
         "desktop_screenshot": "desktop_light.png",
         "mobile_screenshot": "mobile_light.png",
@@ -423,35 +423,13 @@
       }
     },
     {
-      "name": "Business-Sandbox",
-      "id": "bold",
-      "meta": {
-        "desktop_screenshot": "desktop_bold.png",
-        "mobile_screenshot": "mobile_bold.png",
-        "description": "Ideal for a wide range of businesses and brands, this design is fully responsive, simple, and ready for you to add your branding, logo, and products. It comes ready to build a clean looking and beautiful store with features such as homepage carousel, social media icons, featured and top selling products, and faceted search (which is available on select BigCommerce plans). Fully express your brand by using our Theme Editor to quickly and easily style your site's fonts and colors, all without the need to write code.",
-        "demo_url": "https://cornerstone-bold-demo.mybigcommerce.com",
-        "optimized_for": [
-          "multi_purpose",
-          "mobile_tablet_desktop",
-          "sales_discounts",
-          "large_catalog"
-        ],
-        "industries": [
-          "food_beverage"
-        ]
-      },
-      "settings": {
-        "ts_api_environment": "stage"
-      }
-    },
-    {
       "name": "Production",
-      "id": "warm",
+      "id": "production",
       "meta": {
-        "desktop_screenshot": "desktop_warm.png",
-        "mobile_screenshot": "mobile_warm.png",
+        "desktop_screenshot": "desktop_light.png",
+        "mobile_screenshot": "mobile_light.png",
         "description": "Ideal for a wide range of businesses and brands, this design is fully responsive, simple, and ready for you to add your branding, logo, and products. It comes ready to build a clean looking and beautiful store with features such as homepage carousel, social media icons, featured and top selling products, and faceted search (which is available on select BigCommerce plans). Fully express your brand by using our Theme Editor to quickly and easily style your site's fonts and colors, all without the need to write code.",
-        "demo_url": "https://cornerstone-warm-demo.mybigcommerce.com",
+        "demo_url": "https://cornerstone-light-demo.mybigcommerce.com",
         "optimized_for": [
           "multi_purpose",
           "mobile_tablet_desktop",
