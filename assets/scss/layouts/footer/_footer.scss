@@ -82,9 +82,15 @@
 .footer-info-col--right-medium {
     width: width("4/12");
     padding-top: (spacing("base"));
+    @media (min-width: 801px) {
+        .list-social-logos {
+            float: right;
+            margin-bottom: 10px;
+        }
+    }
     float: right;
     .list-social-logos li {
-        float: right;
+        float: left;
         position: relative;
         display: block;
         padding-left: 10px;
@@ -129,7 +135,7 @@
             width: 50%;
             display: inline-block;
             margin-left: 0 !important;
-            margin-bottom: 15px;
+            margin-bottom: 0px;
             li {
                 width: 33%;
             }
@@ -292,4 +298,8 @@
             padding: 0 !important;
         }
     }
+}
+
+.footer-copyright-date {
+    padding-right: 5px
 }
