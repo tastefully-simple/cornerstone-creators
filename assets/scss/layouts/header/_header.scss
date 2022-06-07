@@ -206,7 +206,8 @@
 // -----------------------------------------------------------------------------
 
 .mobileMenu-toggle {
-    @include square($header-toggle-width);
+    width: 50px;
+    height: 50px;
     display: inline-block;
     font-size: 0;
     left: 0;
