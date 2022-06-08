@@ -11,12 +11,14 @@
             setConsultantId: function(cid) {
                 // Remove trailing spaces
                 const newCid = cid ? cid.trim() : cid;
-
                 Cookies.set('cid', newCid, { domain: cookieDomain });
             },
 
             getConsultantId: function() {
                 return Cookies.get('cid');
+            },
+            deleteConsultantCookie: function () {
+                Cookies.remove('cid')
             }
         };
     })(window);

@@ -8,11 +8,32 @@
     window.language = {{{langJson 'optimized_checkout'}}};
 </script>
 
+{{> components/common/theme-settings }}
+
+<link href="{{ head.favicon }}" rel="shortcut icon">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 {{{head.scripts}}}
+{{~inject 'template' template}}
+
+{{!-- Get this loading ASAP --}}
+<link rel="preload" href="{{cdn 'assets/dist/theme-bundle.main.js'}}" as="script">
+
+{{!-- global libraries --}}
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+{{> components/common/bb-cookie }}
 
 {{/partial}}
 
 {{#partial "page"}}
+<script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+<script>
+    {{!-- Exported in app.js --}}
+    function onThemeBundleMain() {
+        window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+    }
+</script>
+<script async defer src="{{cdn 'assets/dist/theme-bundle.main.js'}}" onload="onThemeBundleMain()"></script>
 <header class="checkoutHeader optimizedCheckout-header">
     <div class="checkoutHeader-content">
         <h1 class="is-srOnly">{{lang 'checkout.title'}}</h1>
