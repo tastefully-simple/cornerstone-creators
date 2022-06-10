@@ -34,7 +34,15 @@
         "no_products": "There are no products listed under this category."
     },
     "checkout": {
-        "title": "Checkout"
+        "title": "Checkout2"
+    },
+    "optimized_checkout": {
+        "customer": {
+            "continue_as_guest_action": "Continue",
+            "checkout_as_guest_text": " ",
+            "login_text": " ",
+            "login_action": " "
+        }
     },
     "cart": {
         "nav_aria_label": "Cart with 0 items",
