@@ -70,16 +70,55 @@
     overflow-y: auto;
     z-index: 100;
 
-    @include breakpoint("large") {
-        width: 70% !important;
-        max-width: 800px !important;
+    .breaker {
+        display: none;
+    }
+
+    @include breakpoint("medium") {
+
+        :nth-last-child(20) ~ :nth-child(10n+10)
+        {
+            width: 100%;
+            display: block;
+        }
+
+        :nth-last-child(18) ~ :nth-child(9n+10)
+        {
+            width: 100%;
+            display: block;
+        }
+
+        :nth-last-child(16) ~ :nth-child(8n+8)
+        {
+            width: 100%;
+            display: block;
+        }
+
+        :nth-last-child(14) ~ :nth-child(8n+8)
+        {
+            width: 100%;
+            display: block;
+        }
+
+        :nth-last-child(18) ~ :nth-child(8n+8), :nth-last-child(20) ~ :nth-child(18)
+        {
+            display: none !important;
+        }
+
+        :nth-last-child(20) ~ :nth-child(19) {
+            width: unset !important;
+        }
+
         ul.navPages-list {
             width: 100%;
             text-align: center;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
 
             li.navPages-item {
-                display:inline-block;
-                float: none;
+                display:block;
+                float: left;
                 margin-top: 5px;
             }
         }
