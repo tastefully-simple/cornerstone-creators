@@ -55,10 +55,6 @@
     vertical-align: top;
     // TODO: specifically use vendor only for IE11 since overflow-wrap is not supported here
     -ms-word-break: break-all;
-    @include breakpoint("small") {
-        text-align: left;
-        width: width("6/12");
-    }
 
     @include breakpoint("medium") {
         width: width("4/12");
@@ -182,6 +178,7 @@
     list-style: none;
     margin-left: 0;
     padding-top: (spacing("base"));
+    text-align: left;
 
     a {
         color: $color-white;
@@ -197,6 +194,7 @@
 
     .last {
         display: none;
+        text-align: center;
     }
 
     @media (max-width: 800px) {
