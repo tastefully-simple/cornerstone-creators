@@ -52,9 +52,9 @@
     "hide_category_page_heading": false,
     "hide_blog_page_heading": false,
     "hide_contact_us_page_heading": false,
-    "homepage_new_products_count": 5,
-    "homepage_featured_products_count": 4,
-    "homepage_top_products_count": 4,
+    "homepage_new_products_count": 0,
+    "homepage_featured_products_count": 0,
+    "homepage_top_products_count": 0,
     "homepage_show_carousel": true,
     "homepage_show_carousel_arrows": true,
     "homepage_show_carousel_play_pause_button": true,
@@ -396,7 +396,10 @@
       },
       "images": {},
       "settings": {
-        "ts_api_environment": "qa1"
+        "ts_api_environment": "qa1",
+        "homepage_featured_products_count": 0,
+        "homepage_top_products_count": 0,
+        "homepage_new_products_count": 0
       }
     },
     {
@@ -419,7 +422,36 @@
       },
       "images": {},
       "settings": {
-        "ts_api_environment": "qa1"
+        "ts_api_environment": "qa1",
+        "homepage_featured_products_count": 0,
+        "homepage_top_products_count": 0,
+        "homepage_new_products_count": 0
+      }
+    },
+    {
+      "name": "Mock",
+      "id": "mock",
+      "meta": {
+        "desktop_screenshot": "desktop_light.png",
+        "mobile_screenshot": "mobile_light.png",
+        "description": "Ideal for a wide range of businesses and brands, this design is fully responsive, simple, and ready for you to add your branding, logo, and products. It comes ready to build a clean looking and beautiful store with features such as homepage carousel, social media icons, featured and top selling products, and faceted search (which is available on select BigCommerce plans). Fully express your brand by using our Theme Editor to quickly and easily style your site's fonts and colors, all without the need to write code.",
+        "demo_url": "https://cornerstone-light-demo.mybigcommerce.com",
+        "optimized_for": [
+          "multi_purpose",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "large_catalog"
+        ],
+        "industries": [
+          "food_beverage"
+        ]
+      },
+      "images": {},
+      "settings": {
+        "ts_api_environment": "stage",
+        "homepage_featured_products_count": 0,
+        "homepage_top_products_count": 0,
+        "homepage_new_products_count": 0
       }
     },
     {
@@ -441,7 +473,10 @@
         ]
       },
       "settings": {
-        "ts_api_environment": ""
+        "ts_api_environment": "",
+        "homepage_featured_products_count": 0,
+        "homepage_top_products_count": 0,
+        "homepage_new_products_count": 0
       }
     }
   ]
