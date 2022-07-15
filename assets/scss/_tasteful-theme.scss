@@ -191,7 +191,7 @@ footer{
 }
 .button-secondary{
     color: $bbberry-prime;
-    &:hover, &:active, &:focus{
+    &:hover, &:active, &:focus, &.hover{
         border-color: $color-primaryLight;
         color: $bbberry-prime;
     }
