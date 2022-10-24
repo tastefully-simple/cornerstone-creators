@@ -191,7 +191,7 @@ footer{
 }
 .button-secondary{
     color: $bbberry-prime;
-    &:hover, &:active, &:focus{
+    &:hover, &:active, &:focus, &.hover{
         border-color: $color-primaryLight;
         color: $bbberry-prime;
     }
@@ -324,4 +324,6 @@ textarea{
     display:flex;
     flex-direction:column;
 }
-
+.eapp-cookie-consent-message-component a {
+    font-size: 12px !important;
+}
