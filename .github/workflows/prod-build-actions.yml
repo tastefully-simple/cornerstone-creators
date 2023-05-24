@@ -43,8 +43,8 @@ jobs:
 
     - name: Connect to store
       env:
-        URL: ${{ secrets.STENCIL_STORE_URL_BITES_BOX_PRODUCTION }}
-        TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_BITES_BOX_PRODUCTION }}
+        URL: ${{ secrets.STENCIL_STORE_URL_CREATORS_PRODUCTION }}
+        TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_CREATORS_PRODUCTION }}
       run: stencil init -u $URL -t $TOKEN -p 3000 -h https://api.bigcommerce.com
 
     - name: Publishing theme to Production, automatically deleting oldest theme if necessary
