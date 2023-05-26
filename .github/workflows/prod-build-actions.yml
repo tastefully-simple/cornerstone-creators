@@ -1,4 +1,4 @@
-name: Publish Production BigCommerce BitesBox
+name: Publish Production BigCommerce Creators
 # This workflow is triggered on creation of releases on the master branch only.
 on:
   release:
