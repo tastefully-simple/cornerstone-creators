@@ -300,12 +300,12 @@ footer{
 
 .button-cancel{
     background-color:$white;
-    border-color:$green-apple;
-    color:$green-apple;
+    border-color:$teal;
+    color:$teal;
     @extend .button-primary;
     &:not([disabled]):hover{
-        background-color:$green-apple;
-        border-color:$green-apple;
+        background-color:$teal;
+        border-color:$teal;
     }
 }
 
