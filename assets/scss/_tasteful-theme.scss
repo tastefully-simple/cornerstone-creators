@@ -460,6 +460,11 @@ footer{
     background-size:cover;
     @extend .standard-icons;
 }
+.icon-system-search-gray{
+    background-image:url('../img/icons/icons-system-search-gray@2x.png');
+    background-size:cover;
+    @extend .standard-icons;
+}
 
 // Badge Icons
 .icon-badge-sale-2x{

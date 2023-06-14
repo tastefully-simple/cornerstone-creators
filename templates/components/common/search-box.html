@@ -6,8 +6,9 @@
             <input type="hidden" value="{{ theme_settings.recipe_search_category_shop_filter_id }}" name="category">
         {{/if}}
             <div class="form-prefixPostfix">
-                <input class="form-input" id="search_query_adv" name="search_query_adv" value="{{forms.search.query}}" placeholder="keywords or recipes">
-                <button class="button--search" type="submit" aria-labelledby="search-text"><span class="icon-system-search-teal"></span><span id="search-text" class="sr-only">Search</span></button>
+                <input type="search" class="form-input" id="search_query_adv" name="search_query_adv" value="{{forms.search.query}}" placeholder="keywords">
+                <span class="icon-system-search-gray icon-search-form-mobile"></span>
+                <button class="button--search button-search-form-desktop" type="submit" aria-labelledby="search-text"><span class="icon-system-search-teal"></span><span id="search-text" class="sr-only">Search</span></button>
             </div>
         </div>
     </fieldset>
