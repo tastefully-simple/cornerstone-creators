@@ -2,9 +2,12 @@
     <fieldset class="form-fieldset">
         <div class="form-field">
             <label class="form-label is-srOnly" for="search_query_adv">{{lang 'search.results.form_label'}}</label>
-            <div class="form-prefixPostfix wrap">
-                <input class="form-input" id="search_query_adv" name="search_query_adv" value="{{forms.search.query}}">
-                <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="{{lang 'search.results.form_button_text'}}">
+        {{#if theme_settings.recipe_search_status '==' '1'}}
+            <input type="hidden" value="{{ theme_settings.recipe_search_category_shop_filter_id }}" name="category">
+        {{/if}}
+            <div class="form-prefixPostfix">
+                <input class="form-input" id="search_query_adv" name="search_query_adv" value="{{forms.search.query}}" placeholder="keywords or recipes">
+                <button class="button--search" type="submit" aria-labelledby="search-text"><span class="icon-system-search-teal"></span><span id="search-text" class="sr-only">Search</span></button>
             </div>
         </div>
     </fieldset>

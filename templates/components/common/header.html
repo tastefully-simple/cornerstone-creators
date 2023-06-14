@@ -1,33 +1,48 @@
-<!-- TEST MULTI STORE -->
-<a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
-{{#if banners.top}}
-<div class="banners" data-banner-location="top">
-    {{#each (limit banners.top_metadata 1)}}
-    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
-        <div data-event-type="promotion-click">
-            {{{this.content}}}
-        </div>
-    </div>
-    {{/each}}
-</div>
-{{/if}}
 <header class="header" role="banner">
-    {{#if page_type '===' 'default'}}
-        <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
-        </h1>
-    {{else}}
-        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
+    <div class="header-top textgray-background">
+        <div class="container">
+            <div class="header-top-banner">
+                {{#if banners.top}}
+                <div class="banners" data-banner-location="top">
+                    {{#each (limit banners.top_metadata 1)}}
+                    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+                        <div data-event-type="promotion-click">
+                            {{{this.content}}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="header-top-links">
+                <div class="headertoplinks-nav">
+                    {{> components/common/navigation}}
+                </div>
+            </div>
         </div>
-    {{/if}}
-    <div class="header-mobile-menu">
-        <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
-            <span class="mobileMenu-toggleIcon">Toggle menu</span>
-        </a>
     </div>
-    <div class="navPages-container" id="menu" data-menu>
-        {{> components/common/navigation-menu}}
+    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+        <span class="mobileMenu-toggleIcon">Toggle menu</span>
+    </a>
+
+    <div class="header-main" id="headerMain">
+        <div class="container">
+            {{#if page_type '===' 'default'}}
+                <h1 class="header-logo header-logo--{{theme_settings.logo-position}} header-logo--collapsed">
+                    {{> components/common/store-logo}}
+                </h1>
+            {{else}}
+                <div class="header-logo header-logo--{{theme_settings.logo-position}} header-logo--collapsed">
+                    {{> components/common/store-logo}}
+                </div>
+            {{/if}}
+            <div class="navPages-container" id="menu" data-menu>
+               {{> components/common/navigation-menu-custom}}
+            </div>
+            <div class="nav-search">
+                {{> components/common/search-box}}
+            </div>
+        </div>
     </div>
 </header>
 {{{region name="header_bottom--global"}}}
