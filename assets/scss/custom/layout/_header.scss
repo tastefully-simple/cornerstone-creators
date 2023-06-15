@@ -428,6 +428,24 @@
     }
 }
 @media only screen and (max-width: 800px) {
+    .header {
+        .header-main{
+            .container {
+                .nav-search {
+                    .form {
+                        .form-field {
+                            .form-prefixPostfix {
+                                .form-input {
+                                    -webkit-border-radius: 0;
+                                    -webkit-appearance: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .form-input {
         box-shadow: 2px 2px 2px 1px rgba(235, 235, 235, 0.2);
         &#search_query_adv {
@@ -438,7 +456,7 @@
         }
     }
     #search_query_adv {
-        padding: 15px;
+        padding: 18px;
     }
     .icon-search-form-mobile {
         position: absolute;
