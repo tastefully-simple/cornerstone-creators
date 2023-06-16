@@ -167,6 +167,9 @@
         .header-logo {
             margin: 1rem;
         }
+        .navUser-action {
+            padding-top: 1.25rem;
+        }
     }
 }
 
@@ -413,6 +416,23 @@
             }
         }
     }
+    .previewCartWrapper {
+        .previewCartAction-viewCart {
+            a {
+                color: $text-gray;
+                border-color: $text-gray;
+            }
+            width: 100%;
+            .button {
+                &:hover {
+                    color: $teal;
+                }
+            }
+        }
+        .previewCartItem-price {
+            color: #000000;
+        }
+    }
 }
 
 @media only screen and (min-width:801px) and (max-width:865px) {
@@ -429,7 +449,7 @@
 }
 @media only screen and (max-width: 800px) {
     .header {
-        .header-main{
+        .header-main {
             .container {
                 .nav-search {
                     .form {
@@ -477,6 +497,9 @@
         .navUser-item-cartLabel {
             font-size: 18px;
         }
+    }
+    .navUser-action {
+        padding-top: 1rem;
     }
 }
 @media only screen and (min-width:1920px) {
