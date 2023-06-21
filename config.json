@@ -223,7 +223,7 @@
     "navUser-dropdown-borderColor": "#cccccc",
     "navUser-indicator-backgroundColor": "#d0021b",
     "navPages-color": "#333333",
-    "navPages-color-hover": "#757575",
+    "navPages-color-hover": "#333333",
     "navPages-subMenu-backgroundColor": "#e5e5e5",
     "navPages-subMenu-separatorColor": "#cccccc",
     "dropdown--quickSearch-backgroundColor": "#e5e5e5",
