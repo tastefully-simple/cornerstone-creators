@@ -62,8 +62,7 @@
     margin-top: 0px;
 
     @include breakpoint("small") { // 4
-        margin-left: remCalc($header-toggle-width * 1.5);
-        margin-right: remCalc($header-toggle-width * 1.5);
+        margin: auto;
     }
 
     @include breakpoint("medium") {
@@ -223,7 +222,7 @@
     .mobileMenu-toggleIcon,
     .mobileMenu-toggleIcon::before,
     .mobileMenu-toggleIcon::after {
-        background: $color-white;
+        background: $color-teal;
         content: "";
         display: block;
         height: 2px;
@@ -252,7 +251,7 @@
 
         &::before,
         &::after {
-            background-color: $color-white;
+            background-color: $color-teal;
             bottom: auto;
             top: auto;
             transition: transform 100ms ease-in 150ms, top 100ms ease-in, bottom 100ms ease-in; // Animate lines from hamburger to 'x'
