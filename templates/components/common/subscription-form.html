@@ -1,5 +1,4 @@
-<h3 class="footer-info-heading">{{lang 'newsletter.subscribe'}}</h3>
-<p>{{lang 'newsletter.subscribe_intro'}}</p>
+<h5 class="footer-info-heading">{{lang 'newsletter.subscribe'}}</h5>
 
 <form class="form" action="{{urls.subscribe.action}}" method="post">
     <fieldset class="form-fieldset">
@@ -8,7 +7,7 @@
         <input type="hidden" name="check" value="1">
         <div class="form-field">
             <label class="form-label is-srOnly" for="nl_email">{{lang 'common.email_address'}}</label>
-            <div class="form-prefixPostfix wrap">
+            <div class="form-prefixPostfix newsletter-inputs">
                 <input class="form-input"
                        id="nl_email"
                        name="nl_email"
@@ -16,13 +15,13 @@
                        value="{{customer.email}}"
                        placeholder="{{lang 'newsletter.email_placeholder'}}"
                        aria-describedby="alertBox-message-text"
-                       aria-required="true"
-                       required
                 >
-                <input class="button button--primary form-prefixPostfix-button--postfix"
-                       type="submit"
-                       value="{{lang 'newsletter.subscribe_submit'}}"
+                <button class="button button-alternate form-prefixPostfix-button--postfix"
+                        type="submit"
+                        value="{{lang 'newsletter.subscribe_submit'}}"
                 >
+                        {{lang 'newsletter.subscribe_submit'}}
+                </button>
             </div>
             {{#if settings.show_newsletter_summary }}
                 <div class="footer-newsletter-summary">{{settings.newsletter_summary}}</div>
