@@ -22,8 +22,8 @@ $exportCSS--buttons:                    true; // 1
 $buttonStyle-default-color:                  stencilColor("button--default-color");
 $buttonStyle-default-colorHover:             stencilColor("button--default-colorHover");
 $buttonStyle-default-colorActive:            stencilColor("button--default-colorActive");
-$buttonStyle-default-backgroundColor:        transparent;
-$buttonStyle-default-backgroundColorHover:   transparent;
+$buttonStyle-default-backgroundColor:        stencilColor("button--default-backgroundColor");
+$buttonStyle-default-backgroundColorHover:   stencilColor("button--default-backgroundColorHover");
 $buttonStyle-default-backgroundColorActive:  transparent;
 $buttonStyle-default-borderColor:            stencilColor("button--default-borderColor");
 $buttonStyle-default-borderColorHover:       stencilColor("button--default-borderColorHover");
