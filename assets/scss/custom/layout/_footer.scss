@@ -1,0 +1,319 @@
+// =============================================================================
+// Tastefully Simple Footer Styles
+// =============================================================================
+
+.footer {
+    padding: 0;
+    // Set all colors to white as the footer uses a generic config value that we cannot re-define
+    .footer-info-col,
+    .footer-bottom{
+        color: $white;
+        a,
+        a:hover{
+            color:$white;
+        }
+        button {
+            padding:0;
+        }
+        .footer-copyright{
+            &>.powered-by{
+                color: $white;
+            }
+        }
+    }
+    // end color override
+    .footer-loveit{
+        img{
+            width:100%;
+        }
+    }
+    &>.footer-info {
+        max-width:100%;
+        margin:0;
+        padding-top:30px;
+        .container {
+            .footer-info-content{
+                text-transform: lowercase;
+                display:flex;
+                flex-direction:column;
+            }
+            .footer-info-heading {
+                color: $white;
+                @extend .framelink-lg;
+                &:not(.tst-accordion-title) {
+                    margin-top:1rem;
+                    text-align:left;
+                }
+                &::after {
+                    color:$teal;
+                }
+            }
+            .footer-info-list{
+                li{
+                    padding:.2rem 0;
+                }
+            }
+            .footer-newsletter {
+                color: $white;
+                margin:auto;
+                max-width:500px;
+                .form {
+                    margin-bottom:0;
+                    .form-label {
+                        color: $white; 
+                    }
+                    .form-field {
+                        margin-bottom: 0px;
+                        .newsletter-inputs {
+                            align-items:center;
+                            display:flex;
+                            .form-input {
+                                flex: 2 2 200px;
+                            }
+                            button {
+                                flex:1 1 100px;
+                                margin-top:0;
+                            }
+                        }
+                    }
+                    .alertbox-container{
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.8);
+                        z-index: 100;
+
+                        div[class^='alertbox-']{
+                            top: 40%;
+
+                            h2.alert-title{
+                                text-align: left;
+                            }
+
+                            a.retry-btn,
+                            a.ok-btn{
+                                display: block;
+                                text-align: right;
+                            }
+
+                            a.retry-btn{
+                                color: $utility-red;
+                            }
+
+                            a.ok-btn{
+                                color: $utility-green;
+                            }
+                        }
+                    }
+                }
+            }
+            .footer-social {
+                margin:1.4rem 0;
+                padding-left:0;
+                .socialLinks {
+                    .socialLinks-item {
+                        border:2px solid $white;
+                        border-radius:50%;
+                        padding:8px;
+                        .icon{
+                            svg{
+                                fill:$white;
+                            }
+                        }
+                    }
+                }
+                ul {
+                    &.social-links {
+                        &.socialLinks--alt {
+                            margin-left: 0px;
+                        }
+                    }
+                }
+                .socialLinks-item {
+                    &:not(:first-child) {
+                        margin-left: 1rem;
+                    }
+                    i {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        background-color:$text-gray;
+        .container {
+            align-items:center;
+            display:flex;
+            flex-flow:column-reverse;
+            justify-content:space-between;
+            &>div {
+                align-items:center;
+                display:flex;
+                &.copyright-logos {
+                    width: 100%;
+                    flex:2 2 50%;
+                    justify-content:space-between;
+                    .footer-copyright {
+                        width: 80%;
+                        text-align:left;
+                    }
+                    .footer-logos {
+                        display:flex;
+                        a {
+                            display:block;
+                            padding:0 .5rem;
+                        }
+                    }
+                }
+                &.footer-use-links {
+                    flex:1 1 30%;
+                    justify-content:flex-end;
+                    a {
+                        text-decoration:none;
+                    }
+                    p {
+                        margin-bottom:0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:551px) and (max-width:800px) {
+    .footer-info-col {
+        display:block;
+        text-align:center;
+        width:auto;
+    }
+}
+@media only screen and (min-width:800px) {
+    .footer{
+        .footer-bottom {
+            background-color:$text-gray;
+            .container {
+                flex-flow:row;
+            }
+        }
+        &>.footer-info {
+            max-width:100%;
+            margin:0;
+            padding-top:30px;
+            .container {
+                .footer-info-content{
+                    flex-direction:row;
+                    justify-content:space-around;
+                }
+                .footer-info-heading {
+                    &:not(.tst-accordion-item){
+                        margin-top:initial;
+                    }
+                }
+                .footer-newsletter{
+                    margin:0;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:800px) and (max-width:900px) {
+    .footer {
+        &>.footer-info {
+            .container {
+                .footer-social {
+                    .socialLinks {
+                        .socialLinks-item {
+                            padding:6px;
+                            &:not(:last-child) {
+                                margin-right:0.4rem;
+                            }
+                            .icon{
+                                height:1.2rem;
+                                width:1.2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// Mobile and Accordion styles
+@media only screen and (max-width:800px) {
+    .footer {
+        .footer-bottom {
+            .container {
+                align-items: start;
+            }
+            
+        }
+        .footer-info {
+            .container {
+                .footer-info-heading {
+                    font-weight: normal;
+                }
+                .footer-social {
+                    .socialLinks-item {
+                        i {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer-copyright{
+        padding: 10px 0px;
+        &>.powered-by{
+            font-size: 10px;
+            text-wrap: nowrap;
+        }
+    }
+    .tst-accordion {
+        .tst-accordion-item {
+            color: $white;
+            transition:margin 0.4s ease-out;
+            margin-bottom:1rem;
+            &.open {
+                transition:margin 0.4s ease;
+                &:not(:last-of-type) {
+                    margin-bottom:7rem;
+                }
+                &:last-of-type {
+                    margin-bottom:4rem;
+                }
+                .tst-accordion-title{
+                    &::after{
+                        content:'\f0d8';
+                        font:700 15px 'Font Awesome 5 Pro';
+                    }
+                }
+                .tst-accordion-body {
+                    margin: 0px 0px 10px 0px;
+                    transform: scaleY(1);
+                    transform-origin: top;
+                    transition: transform 0.4s ease;
+                }
+            }
+        }
+
+        .tst-accordion-body {
+            height:0px;
+            transition:height 1s ease-out;
+            transform: scaleY(0);
+        }
+
+        .tst-accordion-title {
+            color: $white;
+            cursor:pointer;
+            &::after {
+                content:'\f0d7';
+                font:700 15px 'Font Awesome 5 Pro';
+                padding-left:.5rem;
+            }
+        }
+    }
+}

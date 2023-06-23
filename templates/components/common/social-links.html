@@ -1,9 +1,12 @@
 {{#if social_media}}
+    <ul class="socialLinks socialLinks--alt">
         {{#each social_media}}
-        <li>
-            <a href="{{url}}" title="{{#if display_name '==' 'tumblr'}}Tastefully Simple.com{{else}}{{capitalize display_name}}{{/if}}" target="_blank">
-                <img alt="{{capitalize display_name}}" src="{{cdn 'assets/img/'}}{{display_name}}.png" />
-            </a>
-        </li>
+            <li class="socialLinks-item">
+                <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank" rel="noopener" aria-labelledby="{{display_name}}-text">
+                    <svg><use xlink:href="#icon-{{display_name}}" /></svg>
+                    <span class="sr-only" id="{{display_name}}-text">{{display_name}}</span>
+                </a>
+            </li>
         {{/each}}
+    </ul>
 {{/if}}

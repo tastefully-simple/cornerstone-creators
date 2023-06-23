@@ -10,6 +10,11 @@
         "navigate": "Navigate",
         "info": "Info",
         "categories": "Categories",
+        "products": "Products",
+        "about_us": "About Us",
+        "helpful_links": "Helpful Links",
+        "creators_and_affiliates": "Creators and Affiliates",
+        "support": "Support",
         "call_us": "Call us at {phone_number}",
         "powered_by": "Powered by"
     },
@@ -830,10 +835,10 @@
         "comments": "Comments"
     },
     "newsletter": {
-        "subscribe": "Subscribe to our newsletter",
+        "subscribe": "add flavor to your inbox",
         "subscribe_intro": "Get the latest updates on new products and upcoming sales",
-        "subscribe_submit": "Subscribe",
-        "email_placeholder": "Your email address",
+        "subscribe_submit": "submit",
+        "email_placeholder": "email",
         "subscribed_heading": "Thanks for Subscribing!",
         "subscribed_heading_error": "Oops...",
         "subscribed_message": "Thank you for joining our mailing list. You'll be sent the next issue of our newsletter shortly",
