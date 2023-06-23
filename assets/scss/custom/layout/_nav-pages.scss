@@ -180,6 +180,9 @@
         top: 43px;
         width: 0;
     }
+    .navPage-childList {
+        list-style-type: none;
+    }
     .navPage-subMenu-item::marker, .navPage-childList-item::marker {
         list-style: none !important;
         font-variant-numeric: unset;
@@ -189,7 +192,7 @@
         border-bottom: none;
         margin-bottom: 0;
         padding-bottom: 0;
-        font: 900 16px Mulish;
+        font: 900 16px Muli;
     }
     .sticky-header {
         #navPages-catShop {
@@ -405,7 +408,7 @@
         border-bottom: none;
         margin-bottom: 0;
         padding-bottom: 0;
-        font: 900 16px Mulish;
+        font: 900 16px Muli;
     }
     .sticky-header {
         #navPages-catShop {

@@ -18,62 +18,69 @@
     {{/if}}
 
 {{/if}}
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-44513817-57c9-4834-917d-7b9e9ba8a63f"></div>
 <footer class="footer" role="contentinfo">
     <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
-    <div class="container">
-        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
-            <article class="footer-info-col
-                footer-info-col--social
-                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
-                data-section-type="footer-webPages">
-                    <h3 class="footer-info-heading">{{lang 'social.connect'}}</h3>
-                    {{> components/common/social-links}}
-            </article>
-        {{/if}}
-        <section class="footer-info">
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
-                <ul class="footer-info-list">
-                    <li>
-                        <a href="/terms-of-use/">Terms of Use</a>
-                    </li>
-                    <li>
-                        <a href="/privacy/">Privacy</a>
-                    </li>
-                    <li>
-                        <a href="/faq/">FAQ</a>
-                    </li>
-                    <li>
-                        <a href="/contact-us/">Contact Us</a>
-                    </li>
-                    <li class="last">
-                        <img src="{{cdn 'assets/img/tstlogo.png'}}" />
-                    </li>
-                </ul>
-            </article>
-            <article class="footer-info-col footer-info-col--right-medium footer-social-block" data-section-type="footer-socialLogos">
-                <ul class="list-social-logos">
-                    {{> components/common/social-links}}
-                </ul>
-                <ul class="list-social-logos">
-                    <li class="last">
-                        <img src="{{cdn 'assets/img/footerlogo-white.png'}}" /><span class="footer-copyright-date">&copy; {{moment format="YYYY"}} </span>
-                    </li>
-                </ul>
-                <span class="footer-mobile-copyright"><p class="powered-by">&copy; {{moment format="YYYY"}} Tastefully Simple </p></span>
-            </article>
-        </section>
-        {{#if theme_settings.show_powered_by}}
-            <div class="footer-copyright">
-                <p class="powered-by">{{lang 'footer.powered_by'}} <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow">BigCommerce</a></p>
+    <div class="footer-upper"></div>
+    <section class="footer-info">
+        <div class="container">
+            <div class="tst-accordion footer-info-content">
+                <nav class="footer-info-col footer-info-col--small tst-accordion-item" data-section-type="footer-shop">
+                    <h5 class="footer-info-heading tst-accordion-title">{{lang 'footer.products'}}</h5>
+                    <ul class="footer-info-list tst-accordion-body">
+                        {{#each categories}}
+                            <li>
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </nav>
+                <nav class="footer-info-col footer-info-col--small tst-accordion-item" data-section-type="footer-about">
+                    <h5 class="footer-info-heading tst-accordion-title">{{lang 'footer.about_us'}}</h5>
+                    <div id="bcapi_footer_about_links"></div>
+                </nav>
+                <nav class="footer-info-col footer-info-col--small tst-accordion-item" data-section-type="footer-support">
+                    <h5 class="footer-info-heading tst-accordion-title">{{lang 'footer.support'}}</h5>
+                    <div id="bcapi_footer_support_links"></div>
+                </nav>
+                <nav class="footer-info-col footer-info-col--small tst-accordion-item" data-section-type="footer-consultants">
+                    <h5 class="footer-info-heading tst-accordion-title">{{lang 'footer.creators_and_affiliates'}}</h5>
+                    <div id="bcapi_footer_creators_links"></div>
+                </nav>
+                <div class="footer-info-col footer-newsletter" data-section-type="newsletterSubscription">
+                    {{#if settings.show_newsletter_box}}
+                        {{> components/common/subscription-form}}
+                    {{/if}}
+                    {{!-- {{> components/common/payment-icons}} --}}
+                    {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+                        <div class="footer-info-col footer-info-col--social footer-social" data-section-type="footer-social">
+                                {{> components/common/social-links}}
+                        </div>
+                    {{/if}}
+                </div>
             </div>
-        {{/if}}
-        {{#if theme_settings.show_copyright_footer}}
-            <div class="footer-copyright">
-                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
+        </div>
+    </section>
+    <section class="footer-bottom">
+        <div class="container">
+            <div class="copyright-logos">
+                {{#if theme_settings.show_copyright_footer}}
+                    <div class="footer-copyright">
+                        <p class="powered-by">&copy; 1998-{{moment format="YYYY"}}, Tastefully Simple, Inc. </p>
+                        <p class="powered-by">Serving suggestions throughout the website.</p>
+                    </div>
+                {{/if}}
+                <div class="footer-logos">
+                    <a href="https://www.bbb.org/us/mn/alexandria/profile/home-accessories-online/tastefully-simple-inc-0704-96001360/#sealclick" title="BBB Accredited Business" target="_blank">
+                        <img src="{{cdn 'assets/img/bbb.png'}}" alt="BBB Accredited Business"/>
+                    </a>
+                </div>
             </div>
-        {{/if}}
-    </div>
-    {{{region name="ssl_site_seal--global"}}}
+            <div class="footer-use-links">
+            </div>
+        </div>
+    </section>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-44513817-57c9-4834-917d-7b9e9ba8a63f"></div>
 </footer>
+
+{{> components/common/content-creator/bcapi-loader }}
