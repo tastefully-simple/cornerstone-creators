@@ -5,6 +5,7 @@ category:
         limit: {{theme_settings.categorypage_products_per_page}}
 ---
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{inject "categoryId" category.id}}
 {{#partial "head"}}
     {{#if pagination.category.previous}}
         <link rel="prev" href="{{pagination.category.previous}}">
@@ -30,27 +31,11 @@ category:
     {{{region name="category_below_header"}}}
 {{/unless}}
 {{{category.description}}}
-<div class="page">
-    {{#if category.faceted_search_enabled}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{else if category.subcategories}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{else if category.shop_by_price}}
-        {{#if theme_settings.shop_by_price_visibility}}
-             <aside class="page-sidebar" id="faceted-search-container">
-                {{> components/category/sidebar}}
-            </aside>
-        {{/if}}
-    {{/if}}
-
-    <div class="page-content" id="product-listing-container">
+<div class="page category-page-content">
+    <main class="page-content" id="product-listing-container">
         {{> components/category/product-listing}}
         {{{region name="category_below_content"}}}
-    </div>
+    </main>
 </div>
 
 {{/partial}}
