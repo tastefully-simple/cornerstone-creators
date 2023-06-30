@@ -14,6 +14,7 @@ import privacyCookieNotification from './global/cookieNotification';
 import carousel from './common/carousel';
 import svgInjector from './global/svg-injector';
 import accordian from './global/accordian';
+import stickyHeader from './global/sticky-header';
 
 export default class Global extends PageManager {
     onReady() {
@@ -29,5 +30,6 @@ export default class Global extends PageManager {
         privacyCookieNotification();
         svgInjector();
         accordian();
+        stickyHeader();
     }
 }
