@@ -145,6 +145,13 @@
             color: white;
         }
     }
+    .previewCartAction-viewCart {
+        @extend .frametext-body;
+        width: 100%;
+        .button {
+            @extend .button-cancel;
+        }
+    }
 }
 
 @media only screen and (min-height:600px) {
@@ -442,23 +449,6 @@
                     }
                 }
             }
-        }
-    }
-    .previewCartWrapper {
-        .previewCartAction-viewCart {
-            a {
-                color: $text-gray;
-                border-color: $text-gray;
-            }
-            width: 100%;
-            .button {
-                &:hover {
-                    color: $teal;
-                }
-            }
-        }
-        .previewCartItem-price {
-            color: #000000;
         }
     }
 }
