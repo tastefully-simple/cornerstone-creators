@@ -52,14 +52,14 @@
     },
     "cart": {
         "nav_aria_label": "Cart with 0 items",
-        "continue_shopping": "Click here to continue shopping",
+        "continue_shopping": "Continue shopping",
         "items": "{NUM, plural, =0{(0 items)} one {(# item)} other {(# items)}}",
         "checkout": {
             "address": {
                 "multiple": "check out with multiple addresses",
                 "or": "or"
             },
-            "button": "Check out",
+            "button": "Checkout",
             "empty_cart": "Your cart is empty",
             "title": "Click here to proceed to checkout",
             "item": "Item",
@@ -861,11 +861,14 @@
         "results": {
             "form_label": "Search Keyword:",
             "form_button_text": "Search",
-            "count": "{ count, plural, one {# result} other {# results} } for '{ search_query }'",
+            "count": "{ count, plural, one {result} other {results} } for { search_query }",
             "quick_count": "{ count, plural, one {# product result} other {# product results} } for '{ search_query }'",
             "quick_count_live": "product results for",
             "product_count": "Products ({count})",
-            "content_count": "News & Information ({count})"
+            "content_count": "News & Information ({count})",
+            "recipe_count": "Recipes ({count})",
+            "searching_recipes": "Recipes (searching...)",
+            "searching_products": "Products (searching...)"
         },
         "faceted": {
             "selected": {
