@@ -1,0 +1,138 @@
+// =============================================================================
+// Tastefully Simple Content Creators Product Card Styles
+// =============================================================================
+
+.productGrid {
+    .product {
+        @include card-dropshadow();
+        margin: 1rem 2.5%;
+        width: 45%;
+        .card-figure {
+            .card-figcaption {
+                display: grid;
+                opacity: 1;
+                position: relative;
+                margin: 5% 0;
+                .quickview {
+                    display: none;
+                }
+            }
+        }
+        .out-of-stock-button {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-decoration: none;
+            .out-of-stock-title {
+                align-items: center;
+                color: $burgundy;
+                display: flex;
+                flex-direction: column;
+                &>span {
+                    margin-right: .25rem;
+                }
+            }
+            .out-of-stock-message {
+                display: none;
+            }
+        }
+        .button-primary {
+            margin: 0;
+            text-transform: lowercase;
+            font-weight: 400;
+            width: 80%;
+        }
+        .card-body {
+            color: $text-gray;
+            text-align: center;
+            padding: 0;
+            font-weight: 600;
+            .card-text {
+                color: $text-gray;
+                font-weight: 400;
+            }
+            .card-title {
+                a {
+                    font-weight: 600;
+                    font-size: 13px;
+                    text-wrap: balance;
+                }
+            }
+        }
+        .card-image {
+            margin: 0.25rem 0 0;
+        }
+    }
+}
+
+.productGrid .recipes-page-content {
+    .product {
+        margin-left: stencilString('categorypage_product_card_margin');
+        margin-right: stencilString('categorypage_product_card_margin');
+    }
+    .product {
+        @include card-dropshadow();
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 40%;
+        .card-figure {
+            .card-figcaption {
+                .quickview {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// @razoyo: max-width media query to target very small mobile devices
+@media only screen and (max-width:400px) {
+    .productGrid {
+        .product {
+            padding: 0;
+            .button {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:801px) {
+    .productGrid {
+        .product {
+            width: 20%;
+            .button {
+                display: block;
+                margin: 0 auto;
+                min-width: 121px;
+            }
+            .card-figure {
+                .card-figcaption {
+                    .quickview {
+                        display: none;
+                    }
+                }
+            }
+            .out-of-stock-button {
+                .out-of-stock-title {
+                    flex-direction: row;
+                }
+                .out-of-stock-message {
+                    display: block;
+                }
+            }
+            .card-body {
+                text-align: center;
+                h1,
+                h2,
+                h3,
+                h4,
+                h5 {
+                    font-family: stencilFontFamily("product-grid-font");
+                }
+                .price {}
+            }
+        }
+    }
+}
