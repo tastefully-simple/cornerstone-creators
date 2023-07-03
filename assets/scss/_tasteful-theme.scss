@@ -283,6 +283,9 @@ footer{
 .button{
     @extend .frametext-semibold;
     -webkit-transition: all 0.15s ease;
+    &:hover {
+        border-color: $teal-hover;
+    }
 }
 .button-primary{
     padding:10px 15px;
