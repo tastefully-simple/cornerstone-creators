@@ -8,7 +8,15 @@
             background-color: transparent;
         }
     }
-    
+    svg {
+        fill: $teal;
+    } 
+}
+.cart-total, h1, .cart-total-label {
+    @extend .textgray-text;
+}
+.cart-total-value, .cart-item-value {
+    @extend .frametext;
 }
 .cart-item-label {
     color: #000000;
