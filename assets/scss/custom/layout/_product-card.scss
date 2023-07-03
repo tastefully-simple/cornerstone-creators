@@ -7,6 +7,9 @@
         @include card-dropshadow();
         margin: 1rem 2.5%;
         width: 45%;
+        .card {
+            margin: 1rem;
+        }
         .card-figure {
             .card-figcaption {
                 display: grid;
@@ -38,30 +41,36 @@
             }
         }
         .button-primary {
-            margin: 0;
             text-transform: lowercase;
-            font-weight: 400;
-            width: 80%;
+        }
+        h3 {
+            @extend .frameheading-3;
+            a {
+                @extend .textgray-text;
+                @extend .frameheading-3;
+            }
         }
         .card-body {
-            color: $text-gray;
-            text-align: center;
-            padding: 0;
-            font-weight: 600;
-            .card-text {
-                color: $text-gray;
-                font-weight: 400;
-            }
+            @extend .frameheading-5;
             .card-title {
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 a {
-                    font-weight: 600;
-                    font-size: 13px;
                     text-wrap: balance;
                 }
+            }
+            .card-text{
+                @extend .textgray-text;
             }
         }
         .card-image {
             margin: 0.25rem 0 0;
+        }
+        .button {
+            width: fit-content;
+            @extend .frametext;
         }
     }
 }
@@ -93,6 +102,11 @@
             padding: 0;
             .button {
                 font-size: 12px;
+            }
+            .card-body {
+                .card-title {
+                    height: 6rem;
+                }
             }
         }
     }
