@@ -9,10 +9,9 @@
             font-size: 34px;
         }
         @include breakpoint("medium") {
-            font-size: 28px
+            font-size: 28px;
         }
     }
-    
     .price {
         font-family: "PT Serif";
         color: $teal;
@@ -90,7 +89,7 @@ ul {
         font-size: 24px;
     }
 }
-@media screen and (min-width: 501px) and (max-width: 800px)  {
+@media screen and (min-width: 501px) and (max-width: 800px) {
     div {
         .shg-c {
             width: 100%;
@@ -113,6 +112,17 @@ ul {
             width: 80%;
             float: unset;
             margin: auto;
+        }
+    }
+}
+@media screen and (min-width: 801px) {
+    .productView-options {
+        .form-action {
+            width: 50%;
+            max-width: 300px;
+            .button {
+                width: 100%;
+            }
         }
     }
 }
