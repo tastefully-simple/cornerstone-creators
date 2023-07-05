@@ -724,6 +724,8 @@
         "max_purchase_quantity": "Maximum Purchase:",
         "min_purchase_quantity": "Minimum Purchase:",
         "related_products": "Carefully Curated",
+        "related_products_header": "Similar Products You Might Also Enjoy",
+        "temporarily_out_of_stock": "Temporarily Out of Stock",
         "top": "Most Popular Products",
         "similar_by_views": "Customers Also Viewed",
         "featured": "Featured Products",
