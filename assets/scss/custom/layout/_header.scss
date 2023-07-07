@@ -32,7 +32,7 @@
                 color: $teal !important;
             }
         }
-        
+
     }
     .header-top-banner {
         .banners {
@@ -145,6 +145,41 @@
             color: white;
         }
     }
+    .previewCartAction-viewCart {
+        @extend .frametext-body;
+        width: 100%;
+        .button {
+            @extend .button-cancel;
+        }
+    }
+    .announcement-bar {
+        background-color: $teal;
+        color: $white;
+        text-align: center;
+    }
+    .announcement-bar-container {
+        padding: 5px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #bcapi_announcement_bar {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        p {
+            display: flex;
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: medium;
+        }
+    }
+
 }
 
 @media only screen and (min-height:600px) {
@@ -444,23 +479,6 @@
             }
         }
     }
-    .previewCartWrapper {
-        .previewCartAction-viewCart {
-            a {
-                color: $text-gray;
-                border-color: $text-gray;
-            }
-            width: 100%;
-            .button {
-                &:hover {
-                    color: $teal;
-                }
-            }
-        }
-        .previewCartItem-price {
-            color: #000000;
-        }
-    }
 }
 
 @media only screen and (min-width:801px) and (max-width:865px) {
@@ -496,7 +514,10 @@
         .header-top-banner {
             .banners {
                 display: none;
-            }   
+            }
+        }
+        .announcement-bar {
+            display: none;
         }
     }
     .form-input {

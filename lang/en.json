@@ -231,7 +231,7 @@
         "header": "Comparing {products, plural, one {# Product} other {# Products}}",
         "remove": "Remove",
         "no_remove": "At least 2 products are needed to make a valid comparison.",
-        "add_to_cart": "Add to cart",
+        "add_to_cart": "add to cart",
         "no_compare": "You must select at least two products to compare"
     },
     "category": {
@@ -723,7 +723,9 @@
         "purchase_units": "{quantity, plural, =0{0 units} one {# unit} other {# units}}",
         "max_purchase_quantity": "Maximum Purchase:",
         "min_purchase_quantity": "Minimum Purchase:",
-        "related_products": "Related Products",
+        "related_products": "Carefully Curated",
+        "related_products_header": "Similar Products You Might Also Enjoy",
+        "temporarily_out_of_stock": "Temporarily Out of Stock",
         "top": "Most Popular Products",
         "similar_by_views": "Customers Also Viewed",
         "featured": "Featured Products",
@@ -763,7 +765,7 @@
             "hide": "Hide Videos",
             "show": "Show Videos"
         },
-        "add_to_cart": "Add to Cart",
+        "add_to_cart": "add to cart",
         "adding_to_cart": "Adding to cart…",
         "options": "Options",
         "none": "None",
