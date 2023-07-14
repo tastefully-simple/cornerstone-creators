@@ -1,0 +1,58 @@
+<div class="add-to-cart-wrapper add-to-cart-category" {{#if add_to_cart_url }} style="visibility: visible"{{/if}}>
+    {{inject 'productQuantityErrorMessage' (lang 'products.quantity_error_message')}}
+    <div class="alertBox productAttributes-message" style="display:none">
+        <div class="alertBox-column alertBox-icon">
+            <icon glyph="ic-success" class="icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+                </svg>
+            </icon>
+        </div>
+        <p class="alertBox-column alertBox-message"></p>
+    </div>
+    {{#or customer (unless settings.hide_price_from_guests)}}
+    <div class="add-to-cart-buttons">
+        <div class="form-action">
+            <form class="grid-add-to-cart-form" id="grid-add-to-cart-{{id}}">
+                <div class="add-to-cart-flex-container">
+                    <div class="row1 hide-on-list">
+                        <div class="card-pricing">
+                            <div class="card-text" data-test-info-type="price">
+                                {{#or customer (unless settings.hide_price_from_guests)}}
+                                {{> components/products/price price=price}}
+                                {{else}}
+                                {{> components/common/login-for-pricing}}
+                                {{/or}}
+                            </div>
+                        </div>
+                        <div class="card-input">
+                            <input class="form-input"
+                                   name="qty"
+                                   type="tel"
+                                   value="1"
+                                   min="1"
+                                   pattern="[0-9]*"
+                                   aria-live="polite">
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div>
+                            <input
+                                    data-wait-message="{{lang 'products.adding_to_cart'}}"
+                                    data-added-message="{{lang 'products.added'}}"
+                                    class="button--small button--primary"
+                                    type="submit"
+                                    value="{{lang 'products.add_to_cart'}}"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <input type="hidden" name="action" value="add">
+                <input type="hidden" name="product_id" value="{{id}}">
+                <span class="product-status-message aria-description--hidden">{{lang 'products.adding_to_cart'}} {{lang 'category.add_cart_announcement'}}</span>
+            </form>
+        </div>
+    </div>
+    {{/or}}
+</div>
