@@ -1,0 +1,28 @@
+<form action="/cart.php" method="GET" data-quick-add-to-cart>
+    <input class="form-input sku-field"
+           name="sku"
+           placeholder="Add Item Number"
+           autocomplete="off" tabindex="2"
+    >
+    <input class="form-input qty-field" type="number"
+           name="qty"
+           placeholder="Quantity"
+           value="1"
+           autocomplete="off"
+           tabindex="3"
+           title="Quantity"
+           min="1"
+    >
+    <button type="submit" class="button button--primary add-to-cart-button" type="submit" tabindex="4" title="{{lang 'products.add_to_cart'}}">
+        <span data-wait-message="{{lang 'products.adding_to_cart'}}">{{lang 'products.add_to_cart'}}</span>
+    </button>
+    <div class="quick-add-popup error-message" data-error-enter-sku>
+        {{lang 'quick_add_to_cart.messages.field_error' }}
+    </div>
+    <div class="quick-add-popup error-message" tabindex="4" data-error-sku-unavailable>
+        {{lang 'quick_add_to_cart.messages.product_error' }}
+    </div>
+    <div class="quick-add-popup success-message" data-sku-success>
+        {{lang 'quick_add_to_cart.messages.product_success' }}
+    </div>
+</form>

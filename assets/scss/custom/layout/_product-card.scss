@@ -73,6 +73,28 @@
             @extend .frametext;
         }
     }
+    .add-to-cart-flex-container {
+        display: flex;
+        flex-flow: column;
+        .row1 {
+            order: 2;
+            .form-input {
+                display: none;
+            }
+        }
+        .row2 { 
+            order: 1;
+            margin-bottom: 1rem;
+        }
+        input{
+            &[type=submit] {
+                &[disabled] {
+                    background-color: #cccccc;
+                    border-color: #cccccc;
+                }
+            }
+        }
+    }
 }
 
 .productGrid .recipes-page-content {
