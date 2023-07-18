@@ -87,10 +87,7 @@ export default class Category extends CatalogPage {
         const originalBtnVal = $addToCartBtn.val();
         const waitMessage = $addToCartBtn.data('waitMessage');
         const addedMessage = $addToCartBtn.data('addedMessage');
-        const productId = $(
-            'input[name=product_id]:first',
-            $(event.target),
-        ).val();
+        const productId = $('input[name=product_id]:first', $(event.target)).val();
         const productQty = $('input[name=qty]:first', $(event.target)).val();
 
         // Do not do AJAX if browser doesn't support FormData
