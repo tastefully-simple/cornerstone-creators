@@ -1,4 +1,4 @@
-name: Publish Production BigCommerce BitesBox
+name: Publish Production BigCommerce Creators
 # This workflow is triggered on creation of releases on the master branch only.
 on:
   release:
@@ -8,7 +8,7 @@ on:
       master
 
 # Allows you to run this workflow manually from the Actions tab
-workflow_dispatch:
+# workflow_dispatch:
   
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node: [14.x]
+        node: [16.x]
 
     steps:
     - name: Checkout code
@@ -43,11 +43,11 @@ jobs:
 
     - name: Connect to store
       env:
-        URL: ${{ secrets.STENCIL_STORE_URL_BITES_BOX_PRODUCTION }}
-        TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_BITES_BOX_PRODUCTION }}
+        URL: ${{ secrets.STENCIL_STORE_URL_CREATORS_PRODUCTION }}
+        TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_CREATORS_PRODUCTION }}
       run: stencil init -u $URL -t $TOKEN -p 3000 -h https://api.bigcommerce.com
 
     - name: Publishing theme to Production, automatically deleting oldest theme if necessary
-      run: stencil push -a -d
+      run: stencil push -a Production -d
       # removed the sub-theme value -a from prod since that should change at some point so we'll just accept the default for now
 

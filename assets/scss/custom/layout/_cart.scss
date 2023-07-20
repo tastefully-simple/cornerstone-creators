@@ -1,0 +1,57 @@
+// =============================================================================
+// Tastefully Simple Content Creator Footer Styles
+// =============================================================================
+
+.cart {
+    .button {
+        &.button--icon {
+            background-color: transparent;
+        }
+    }
+    svg {
+        fill: $teal;
+    } 
+}
+.cart-total, h1, .cart-total-label {
+    @extend .textgray-text;
+}
+.cart-total-value, .cart-item-value {
+    @extend .frametext;
+}
+.cart-item-label {
+    color: #000000;
+}
+.cart-actions {
+    @include u-listBullets("none");
+    display: flex;
+    flex-flow: column;
+    padding: 2rem;
+    background-color: $gainsboro;
+    text-align: right;
+    width: 100%;
+
+    @include breakpoint("small") {
+        float: right;
+        width: grid-calc(9, $total-columns);
+    }
+
+    @include breakpoint("medium") {
+        margin-bottom: spacing("base");
+        width: grid-calc(7, $total-columns);
+    }
+
+    @include breakpoint("large") {
+        width: grid-calc(5, $total-columns);
+    }
+    
+    a {
+        margin-top: 1rem;
+        padding: 1rem;
+        &.button--secondary {
+            margin-left: 0;
+            background-color: white;
+            color: $teal;
+            text-transform: capitalize;
+        }
+    }
+}

@@ -9,39 +9,28 @@
 // 1. To enable the grid's display: inline-block; to work properly, we need to
 //    remove the white-space that it creates between columns with font-size: 0;
 // 2. Re-set the font-size that was reduced to 0 in point 1 for children.
-// 3. Fix for text flickers on windows devices
 //
 // -----------------------------------------------------------------------------
 
 .footer {
-    //background-color: $footer-background;
-    background-image:url('../img/footerbgtile.png');
-    background-repeat: repeat-x;
-    padding: spacing("third") 0;
+    background-color: $footer-background;
+    border-top: container("border");
+    padding: spacing("double") 0;
     position: relative;
-    transform: translateZ(0); // 3
-    height: $footer-height;
-    @media (max-width: 800px) {
-        height: ($footer-height * 2) + $footer-logo-height;
-        background-position-y: bottom;
-    }
 }
 
 .footer-title-sr-only {
-    height: 1px;
-    left: -10000px;
-    overflow: hidden;
     position: absolute;
+    left: -10000px;
     top: auto;
     width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .footer-info {
     @include grid-row($behavior: nest);
     font-size: 0; // 1
-    @media (max-width: 800px) {
-        height: 100%;
-    }
 }
 
 .footer-info-col {
@@ -50,11 +39,16 @@
     display: inline-block;
     float: none;
     font-size: fontSize("base"); // 2
-    overflow-wrap: break-word;
+    margin-bottom: spacing("double");
     text-align: center;
     vertical-align: top;
-    // TODO: specifically use vendor only for IE11 since overflow-wrap is not supported here
+    // TODO: specifically use vendor only for IE11 since overflow-wrap is not supported here 
     -ms-word-break: break-all;
+    overflow-wrap: break-word;
+    @include breakpoint("small") {
+        text-align: left;
+        width: width("6/12");
+    }
 
     @include breakpoint("medium") {
         width: width("4/12");
@@ -72,70 +66,6 @@
 .footer-info-col--small {
     @include breakpoint("medium") {
         width: width("2/12");
-    }
-}
-
-.footer-info-col--right-medium {
-    width: width("4/12");
-    padding-top: (spacing("base"));
-    @media (min-width: 801px) {
-        .list-social-logos {
-            float: right;
-            margin-bottom: 10px;
-        }
-    }
-    float: right;
-    .list-social-logos li {
-        float: left;
-        position: relative;
-        display: block;
-        padding-left: 10px;
-        img {
-
-        }
-    }
-    .last {
-        width: 100%;
-        float:right;
-        font-weight: bold;
-        color: $color-white;
-        padding-top: 10px;
-        padding-right: 0;
-
-        img {
-            float: right;
-        }
-        span {
-            display: inline-block;
-            float: right;
-            padding-top: 11px;
-            font-weight: bold;
-        }
-    }
-    .footer-mobile-copyright {
-        display: none;
-    }
-    @media (max-width: 800px) {
-        width: 100% !important;
-        .last {
-            display: none !important;
-        }
-        .footer-mobile-copyright {
-            display: block !important;
-            text-align: center;
-            width: 100%;
-            color: $color-white;
-        }
-        .list-social-logos {
-            text-align: center;
-            width: 50%;
-            display: inline-block;
-            margin-left: 0 !important;
-            margin-bottom: 0px;
-            li {
-                width: 33%;
-            }
-        }
     }
 }
 
@@ -177,42 +107,16 @@
 .footer-info-list {
     list-style: none;
     margin-left: 0;
-    padding-top: (spacing("base"));
-    text-align: left;
 
     a {
-        color: $color-white;
+        color: stencilColor("color-textSecondary");
         text-decoration: none;
-        font-size: 13px;
-        margin-bottom: 8px;
-        display: block;
 
+        // scss-lint:disable NestingDepth
         &:hover {
-            color: stencilColor("color-bbgray");
+            color: stencilColor("color-textSecondary--hover");
         }
-    }
-
-    .last {
-        display: none;
-        text-align: center;
-    }
-
-    @media (max-width: 800px) {
-        li {
-            border-top: 1px solid #e5e5e5;
-        }
-        a, a:hover, a:visited, a:active {
-            color: $color-bbteal;
-            text-align: left;
-            padding-left: 10%;
-            font-weight: bold;
-            font-size: $fontSize-smaller;
-            padding-top: 7px;
-        }
-        .last {
-            display: block !important;
-            padding-top: $footer-logo-height / 4;
-        }
+        // scss-lint:enable NestingDepth
     }
 }
 
@@ -239,9 +143,11 @@
         color: stencilColor("color-textSecondary");
         text-decoration: none;
 
+        // scss-lint:disable NestingDepth
         &:hover {
             color: stencilColor("color-textSecondary--hover");
         }
+        // scss-lint:enable NestingDepth
     }
 }
 
@@ -265,39 +171,18 @@
     }
 }
 
+.footer-geotrust-ssl-seal {
+    @include breakpoint("small") {
+        bottom: 0;
+        position: absolute;
+        right: 16px;
+    }
+
+    table {
+        margin: auto;
+    }
+}
+
 .footer-newsletter-summary {
     text-align: left;
-}
-
-.footer-social-block {
-    float: right;
-    .list-logos {
-        li {
-            display: block;
-            float: left;
-            position: relative;
-        }
-        img {
-            width: 50px;
-            height: 50px;
-        }
-    }
-    @media (max-width: 800px) {
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-    }
-}
-
-.footer {
-    @media (max-width: 800px) {
-        .container {
-            height: 100%;
-            padding: 0 !important;
-        }
-    }
-}
-
-.footer-copyright-date {
-    padding-right: 5px
 }

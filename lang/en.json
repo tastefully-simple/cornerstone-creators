@@ -1,6 +1,7 @@
 {
     "header": {
         "welcome_back": "Welcome back, {name}",
+        "sign_out": "Sign Out",
         "skip_to_main": "Skip to main content"
     },
     "footer": {
@@ -9,6 +10,11 @@
         "navigate": "Navigate",
         "info": "Info",
         "categories": "Categories",
+        "products": "Products",
+        "about_us": "About Us",
+        "helpful_links": "Helpful Links",
+        "creators_and_affiliates": "Creators and Affiliates",
+        "support": "Support",
         "call_us": "Call us at {phone_number}",
         "powered_by": "Powered by"
     },
@@ -46,14 +52,14 @@
     },
     "cart": {
         "nav_aria_label": "Cart with 0 items",
-        "continue_shopping": "Click here to continue shopping",
+        "continue_shopping": "Continue shopping",
         "items": "{NUM, plural, =0{(0 items)} one {(# item)} other {(# items)}}",
         "checkout": {
             "address": {
                 "multiple": "check out with multiple addresses",
                 "or": "or"
             },
-            "button": "Check out",
+            "button": "Checkout",
             "empty_cart": "Your cart is empty",
             "title": "Click here to proceed to checkout",
             "item": "Item",
@@ -225,7 +231,7 @@
         "header": "Comparing {products, plural, one {# Product} other {# Products}}",
         "remove": "Remove",
         "no_remove": "At least 2 products are needed to make a valid comparison.",
-        "add_to_cart": "Add to cart",
+        "add_to_cart": "add to cart",
         "no_compare": "You must select at least two products to compare"
     },
     "category": {
@@ -717,7 +723,9 @@
         "purchase_units": "{quantity, plural, =0{0 units} one {# unit} other {# units}}",
         "max_purchase_quantity": "Maximum Purchase:",
         "min_purchase_quantity": "Minimum Purchase:",
-        "related_products": "Related Products",
+        "related_products": "Carefully Curated",
+        "related_products_header": "Similar Products You Might Also Enjoy",
+        "temporarily_out_of_stock": "Temporarily Out of Stock",
         "top": "Most Popular Products",
         "similar_by_views": "Customers Also Viewed",
         "featured": "Featured Products",
@@ -757,8 +765,9 @@
             "hide": "Hide Videos",
             "show": "Show Videos"
         },
-        "add_to_cart": "Add to Cart",
-        "adding_to_cart": "Adding to cart…",
+        "add_to_cart": "add to cart",
+        "adding_to_cart": "adding to cart",
+        "added": "added to cart",
         "options": "Options",
         "none": "None",
         "sku": "SKU:",
@@ -829,10 +838,10 @@
         "comments": "Comments"
     },
     "newsletter": {
-        "subscribe": "Subscribe to our newsletter",
+        "subscribe": "add flavor to your inbox",
         "subscribe_intro": "Get the latest updates on new products and upcoming sales",
-        "subscribe_submit": "Subscribe",
-        "email_placeholder": "Your email address",
+        "subscribe_submit": "submit",
+        "email_placeholder": "email",
         "subscribed_heading": "Thanks for Subscribing!",
         "subscribed_heading_error": "Oops...",
         "subscribed_message": "Thank you for joining our mailing list. You'll be sent the next issue of our newsletter shortly",
@@ -855,11 +864,14 @@
         "results": {
             "form_label": "Search Keyword:",
             "form_button_text": "Search",
-            "count": "{ count, plural, one {# result} other {# results} } for '{ search_query }'",
+            "count": "{ count, plural, one {result} other {results} } for { search_query }",
             "quick_count": "{ count, plural, one {# product result} other {# product results} } for '{ search_query }'",
             "quick_count_live": "product results for",
             "product_count": "Products ({count})",
-            "content_count": "News & Information ({count})"
+            "content_count": "News & Information ({count})",
+            "recipe_count": "Recipes ({count})",
+            "searching_recipes": "Recipes (searching...)",
+            "searching_products": "Products (searching...)"
         },
         "faceted": {
             "selected": {

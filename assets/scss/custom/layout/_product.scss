@@ -1,0 +1,128 @@
+// =============================================================================
+// Tastefully Simple Content Creator Product Styles
+// =============================================================================
+
+.productView {
+    .productView-title {
+        font-weight: 700;
+        @include breakpoint("large") {
+            font-size: 34px;
+        }
+        @include breakpoint("medium") {
+            font-size: 28px;
+        }
+    }
+    .price {
+        font-family: "PT Serif";
+        color: $teal;
+    }
+    .form-field--increments {
+        .form-label {
+            display: none;
+        }
+        .form-input--incrementTotal {
+            background-color: $gainsboro;
+        }
+    }
+}
+ul {
+    &.tabs {
+        display: none;
+    }
+
+}
+.productView-product {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.tab-title {
+    @extend .frameheading-2;
+    color: $teal;
+    padding: 0;
+    text-align: center;
+}
+.tab-title-heading {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+.card-body {
+    @extend .frameheading-5;
+    text-align: center;
+    h3 {
+        @extend .frameheading-5;
+        margin-bottom: 1rem;
+    }
+    .card-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+    }
+}
+.slick-track {
+    .card-figure {
+        padding: 0.5rem 0;
+        box-shadow: #bbb 0 1px 5px;
+        margin: 0.5rem 0;
+    }
+}
+// =============================================================================
+// Media Queries
+// =============================================================================
+
+@media screen and (max-width: 500px) {
+    div {
+        .shg-c {
+            width: 100%;
+            max-width: 100% !important;
+        }
+        iframe {
+            width: 100%;
+        }
+    }
+    .productView-title {
+        font-size: 24px;
+        text-align: center;
+    }
+    .productView-price {
+        font-size: 24px;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 800px) {
+    div {
+        .shg-c {
+            width: 100%;
+            max-width: 100% !important;
+        }
+        iframe {
+            width: 100%;
+        }
+    }
+    .productView-title {
+        font-size: 24px;
+        text-align: center;
+    }
+    .productView-price {
+        font-size: 24px;
+    }
+    .productView-options {
+        text-align: center;
+        .form-action {
+            width: 80%;
+            float: unset;
+            margin: auto;
+        }
+    }
+}
+@media screen and (min-width: 801px) {
+    .productView-options {
+        .form-action {
+            width: 50%;
+            max-width: 300px;
+            .button {
+                width: 100%;
+            }
+        }
+    }
+}
