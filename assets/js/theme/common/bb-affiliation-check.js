@@ -15,7 +15,7 @@ export default class BbAffiliationCheck {
                         cartID: cart[0].id,
                         // cart[0].email returns "" when user not signed in
                         email: cart[0].email ? cart[0].email : undefined,
-                        consultantID: BBCookie.getConsultantId(),
+                        consultantID: BBCookie.getConsultantId() ?? "0799999",
                     };
                     this.api.affiliationCheck(affiliations);
                 }
