@@ -19,10 +19,32 @@ class Menu {
 
         // Auto-bind
         this.onMenuClick = this.onMenuClick.bind(this);
-        this.onDocumentClick = this.onDocumentClick.bind(this);
 
         // Listen
         this.bindEvents();
+        this.initListeners();
+        this.updateMenuLocation();
+    }
+
+    initListeners() {
+        $(window).on('resize', () => this.updateMenuLocation());
+        const childrenLength = $('.navPage-subMenu-list .navPage-subMenu-item').length;
+        if (childrenLength === 3) {
+            $('#navPages-catShop').addClass('subMenu-three-columns');
+        } else if (childrenLength === 2) {
+            $('#navPages-catShop').addClass('subMenu-two-columns');
+        } else if (childrenLength === 1) {
+            $('#navPages-catShop').addClass('subMenu-one-column');
+        }
+    }
+    updateMenuLocation() {
+        if (window.innerWidth <= 800) {
+            // Mobile menu. Move it to the original location
+            $('#navPages-mainmenu-catShop').after($('#navPages-catShop'));
+        } else {
+            // Desktop menu. Move it to after the header
+            $('.header-logo').after($('#navPages-catShop'));
+        }
     }
 
     collapseAll() {
@@ -38,12 +60,10 @@ class Menu {
 
     bindEvents() {
         this.$menu.on('click', this.onMenuClick);
-        this.$body.on('click', this.onDocumentClick);
     }
 
     unbindEvents() {
         this.$menu.off('click', this.onMenuClick);
-        this.$body.off('click', this.onDocumentClick);
     }
 
     onMenuClick(event) {
@@ -54,10 +74,6 @@ class Menu {
 
             this.collapseNeighbors($neighbors);
         }
-    }
-
-    onDocumentClick() {
-        this.collapseAll();
     }
 }
 

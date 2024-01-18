@@ -5,8 +5,8 @@
 .tsi-styleguide{
     overflow-x:hidden;
     visibility:visible!important;
-    margin-bottom: 120px;
     header{
+        background-color:$wan-white;
         padding:20px;
         text-align:center;
         h1{
@@ -16,24 +16,27 @@
     }
     .styleguide-main{
         margin:auto;
-        max-width:1366;
+        max-width:1760px;
         padding:0 40px;
     }
     .style-item{
         .styleitem-content{
             display:flex;
+            padding-left:5vw;
             position:relative;
             .guide-label{
-                color:$bbdarkteal;
+                color:$text-gray;
             }
         }
         &.style-logos{
             .styleitem-content{
-                align-items: flex-end;
+                align-items:center;
+                justify-content: space-between;
                 img{
+                    padding:55px;
+                    width:44%;
                     &.logo-white{
-                        background-color:$bbteal;
-                        margin-left: 1rem;
+                        background-color:$teal;
                     }
                 }
             }
@@ -84,38 +87,35 @@
                 }
             }
         }
-        &.style-buttons-icons {
-            display: flex;
-        }
         &.style-buttons{
-            @media only screen and (min-width:801px) {
-                width: 46%;
-            }
             .button-primary{
                 &.hover{
                     @extend .button-primary:hover;
                 }
             }
+            .button-cancel{
+                &.hover{
+                    @extend .button-cancel:hover;
+                }
+            }
             .styleitem-content{
-                justify-content:flex-start;
                 .stylebutton-item{
                     &>div{
                         display:flex;
                         flex-direction:column;
-                        justify-content:flex-start;
+                        justify-content:space-between;
                     }
                 }
             }
         }
         &.style-icons{
-            @media only screen and (min-width:801px) {
-                width: 46%;
-            }
             .styleitem-content{
                 flex-direction:column;
+                h3{
+                    text-align:center;
+                }
                 .styleicon-item{
                     display:flex;
-                    flex-direction: column;
                     justify-content:space-evenly;
                     &:not(:last-child){
                         margin-bottom:60px;
@@ -134,8 +134,39 @@
                     }
                     .styleicon-social{
                         &>.guide-label{
+                            text-align:center;
                             &:last-child{
                                 font-weight:700;
+                            }
+                        }
+                    }
+                    .styleicon-system{
+                        flex-basis: 50%;
+                        .system-icons{
+                            column-count:2;
+                            .icon-label {
+                                display: inline-flex;
+                            }
+                            .icon-system-x{
+                                color:$teal;
+                                text-align: center;
+                            }
+                            .icon-system-marker{
+                                background-color:$teal;
+                            }
+                        }
+                    }
+                    .styleicon-badges{
+                        span{
+                            &:first-child{
+                                width:100px;
+                            }
+                        }
+                    }
+                    .styleicon-special{
+                        span{
+                            &:first-child{
+                                width:100px;
                             }
                         }
                     }

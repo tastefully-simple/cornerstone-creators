@@ -14,10 +14,12 @@
 <div class="tabs-contents">
 {{#if product.related_products}}
     <div role="tabpanel" aria-hidden="false" class="tab-content has-jsContent is-active" id="tab-related">
+        <a class="tab-title" href="#tab-related" role="tab" tabindex="0" aria-selected="true" controls="tab-related">{{lang 'products.related_products'}}</a>
+        <h2 class="tab-title-heading textgray-text">{{lang 'products.related_products_header'}}</h2>
         {{#if settings.data_tag_enabled}}
-            {{> components/products/carousel products=product.related_products columns=6 list="Related Products"}}
+            {{> components/products/carousel-pdp products=product.related_products columns=6 list="Related Products"}}
         {{else}}
-            {{> components/products/carousel products=product.related_products columns=6}}
+            {{> components/products/carousel-pdp products=product.related_products columns=6}}
         {{/if}}
     </div>
 {{/if}}

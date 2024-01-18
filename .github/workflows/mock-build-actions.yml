@@ -1,4 +1,4 @@
-name: Publish Business Sandbox BitesBox
+name: Publish Business Sandbox Creators
 
 # Controls when the workflow will run
 # This workflow is triggered on pushes to the dev branch only.
@@ -20,7 +20,7 @@ jobs:
 
     strategy:
       matrix:
-        node: [14.x]
+        node: [16.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -47,8 +47,8 @@ jobs:
       
       - name: Connect to store
         env:
-          URL: ${{ secrets.STENCIL_STORE_URL_BITES_BOX_BUSINESS_SANDBOX }}
-          TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_BITES_BOX_BUSINESS_SANDBOX }}
+          URL: ${{ secrets.STENCIL_STORE_URL_CREATORS_BUSINESS }}
+          TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_CREATORS_BUSINESS }}
         run: stencil init -u $URL -t $TOKEN -p 3000 -h https://api.bigcommerce.com
 
       - name: Publishing theme to Business-Sandbox Bites Box Store, automatically deleting oldest theme if necessary

@@ -13,6 +13,9 @@ import cartPreview from './global/cart-preview';
 import privacyCookieNotification from './global/cookieNotification';
 import carousel from './common/carousel';
 import svgInjector from './global/svg-injector';
+import accordian from './global/accordian';
+import stickyHeader from './global/sticky-header';
+import quickAddToCart from './global/custom/quick-add-to-cart';
 
 export default class Global extends PageManager {
     onReady() {
@@ -27,5 +30,8 @@ export default class Global extends PageManager {
         mobileMenuToggle();
         privacyCookieNotification();
         svgInjector();
+        accordian();
+        stickyHeader();
+        quickAddToCart();
     }
 }
